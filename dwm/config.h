@@ -79,10 +79,10 @@ static const char *bridown[] = { "/usr/bin/brightnessctl", "s", "10%-", NULL };
 static const char *previous[] = { "/usr/bin/playerctl", "previous", NULL };
 static const char *playpause[] = { "/usr/bin/playerctl", "play-pause", NULL };
 static const char *next[] = { "/usr/bin/playerctl", "next", NULL };
-static const char *printflame[] = { "/usr/bin/flameshot", "gui", "-p", "/home/axarva/Desktop", NULL };
-static const char *idleinhibit[] = { "/usr/bin/xdotool", "exec", "/home/axarva/bin/foo.sh", NULL };
-static const char *noinhibit[] = { "/usr/bin/xdotool", "exec", "/home/axarva/bin/unfoo.sh", NULL };
-static const char *goingout[] = { "/usr/bin/xdotool", "exec", "/home/axarva/.config/rofi/scripts/menu_powermenu.sh", NULL };
+static const char *printflame[] = { "/usr/bin/flameshot", "gui", "-p", "/home/$USER/Desktop", NULL };
+static const char *idleinhibit[] = { "/usr/bin/xdotool", "exec", "/home/$USER/bin/foo.sh", NULL };
+static const char *noinhibit[] = { "/usr/bin/xdotool", "exec", "/home/$USER/bin/unfoo.sh", NULL };
+static const char *goingout[] = { "/usr/bin/xdotool", "exec", "/home/$USER/.config/rofi/menu_powermenu.sh", NULL };
 static const char *lock[] = { "/usr/bin/betterlockscreen", "-l",  NULL };
 
 /* tagging */
@@ -128,7 +128,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = {  "/home/axarva/bin/launcher.sh", NULL };
+static const char *dmenucmd[] = {  "/home/$USER/.config/rofi/launcher.sh", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
@@ -183,7 +183,7 @@ static Key keys[] = {
 	{ 0,			   XK_Print, spawn, {.v = printflame } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = idleinhibit } },
 	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = noinhibit } },
-	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD("rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}' -config ~/rofi-spotlight/rofi.rasi") },
+	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD("rofi -modi \"clipboard:greenclip print\" -show clipboard -run-command '{cmd}' -config ~/.config/rofi/blurry.rasi") },
 	{ MODKEY,                       XK_F1,      spawn,          {.v = lock } },
 	{ MODKEY,					XK_Down,	moveresize,		{.v = (int []){ 0, 25, 0, 0 }}},
 	{ MODKEY,					XK_Up,		moveresize,		{.v = (int []){ 0, -25, 0, 0 }}},
