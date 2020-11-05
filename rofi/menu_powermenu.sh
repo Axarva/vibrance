@@ -5,7 +5,7 @@
 ## Github : @adi1090x
 ## Reddit : @adi1090x
 
-rofi_command="/home/$USER/ricing/rofi-1.5.4/build/rofi -theme themes/menu/powermenu.rasi" #For both the menus to work, you need 2 different builds of rofi
+rofi_command="/home/$USER/ricing/rofi-1.5.4/build/rofi -theme powermenu.rasi" #For both the menus to work, you need 2 different builds of rofi
 #uptime=$(uptime -p | sed -e 's/up //g')
 #mem=$( free -h | grep -i mem | awk -F ' ' '{print $3}')
 #cpu=$(sh ~/.config/rofi/bin/usedcpu)
