@@ -1,1 +1,1 @@
-exec /home/axarva/dwm-bar/dwm_bar.sh &
+exec /home/$USER/dwm-bar/dwm_bar.sh &
